@@ -31,19 +31,6 @@ function GetBooksComponents() {
     }, [])
 
     return { books, loading, error }
-
-    // return (
-    //     <div>
-    //         {books.map((book) => (
-    //             <p key={book.id}>
-    //                 Título: {book.title} <br /> Descrição: {book.description} <br />{" "}
-    //                 Resumo: {book.excerpt} <br /> Número de Páginas: {book.pageCount}
-    //             </p>
-    //         ))}
-    //         {loading}
-    //         {error}
-    //     </div>
-    // );
 }
 
 export default GetBooksComponents;
