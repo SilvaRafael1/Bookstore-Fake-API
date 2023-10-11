@@ -1,7 +1,7 @@
-import GetBooksComponents from "./components/GetBooksComponents";
+import GetBooksHooks from "./hooks/GetBooksHooks";
 
-function GetBook() {
-    const { books, loading, error } = GetBooksComponents();
+function GetBooks() {
+    const { books, loading, error } = GetBooksHooks();
 
     if (loading) return <div>Carregando...</div>;
     if (error) return <div>{error}</div>;
@@ -18,4 +18,4 @@ function GetBook() {
     );
 }
 
-export default GetBook;
+export default GetBooks;
