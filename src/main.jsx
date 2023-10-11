@@ -6,6 +6,6 @@ import CreateBook from './CreateBook.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <CreateBook />
+    <GetBooks />
   </React.StrictMode>,
 )

@@ -1,14 +1,14 @@
-import axios from "axios";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import GetBooksHooks from "./hooks/GetBooksHooks";
 import { useState } from "react";
+import client from "./api/api";
 
 function CreateBook() {
     const [response, setResponse] = useState();
 
     // const handleSubmit = (data) => console.log(JSON.stringify(data));
-    const handleSubmit = (data) => axios.post("https://fakerestapi.azurewebsites.net/api/v1/Books", data).then((responseData) => {
+    const handleSubmit = (data) => client.post("", data).then((responseData) => {
         setResponse(responseData.data)
         console.log(responseData.data)
     }).catch((err) => console.log(err));

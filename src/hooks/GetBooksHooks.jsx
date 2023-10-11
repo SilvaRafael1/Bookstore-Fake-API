@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import client from "../api/api";
 
 function GetBooksComponents() {
     const [books, setBooks] = useState([]);
@@ -8,9 +8,7 @@ function GetBooksComponents() {
 
     const listBooks = async () => {
         try {
-            const res = await axios.get(
-                "https://fakerestapi.azurewebsites.net/api/v1/Books"
-            );
+            const res = await client.get();
             setLoading(false);
             if (res.data) {
                 setBooks(res.data);
