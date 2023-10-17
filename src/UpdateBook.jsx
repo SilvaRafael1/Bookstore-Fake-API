@@ -1,14 +1,20 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import client from "./api/api";
+import { useParams } from "react-router-dom";
+import BookDetailHooks from "./hooks/BookDetailHooks";
+import UpdateBookResponse from "./components/UpdateBookResponse";
 
 function UpdateBook() {
     const { id } = useParams()
-    const { book } = BookDetailHooks(id);
+    const { book, loading, error } = BookDetailHooks(id);
 
-    const handleSubmit = (data) => client.post("", data).then((responseData) => {
-        setResponse(responseData.data)
-        console.log(responseData.data)
+    if (loading) return <div>Carregando...</div>;
+    if (error) return <div>{error}</div>;
+
+    const handleSubmit = (data) => client.put(`/${id}`, data).then((responseData) => {
+        UpdateBookResponse(responseData.data)
+        alert("Livro atualizado com sucesso!")
     }).catch((err) => console.log(err));
 
     const validationSchema = Yup.object().shape({
