@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import BookDetailHooks from "./hooks/BookDetailHooks";
 import BookDelete from "./BookDelete";
 
@@ -18,7 +18,7 @@ function BookDetail() {
                 <p className="num">Número de Páginas: {book.pageCount}</p>
             </div>
             <div className="btns">
-                <button>Atualizar</button>
+                <button><NavLink to={"/updateBook/" + book.id}>Atualizar</NavLink></button>
                 <BookDelete id={book.id} />
             </div>
         </div>

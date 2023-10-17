@@ -1,40 +1,29 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import GetBooksHooks from "./hooks/GetBooksHooks";
-import { useState } from "react";
 import client from "./api/api";
 
-function CreateBook() {
-    const [response, setResponse] = useState();
+function UpdateBook() {
+    const { id } = useParams()
+    const { book } = BookDetailHooks(id);
 
-    // const handleSubmit = (data) => console.log(JSON.stringify(data));
     const handleSubmit = (data) => client.post("", data).then((responseData) => {
         setResponse(responseData.data)
         console.log(responseData.data)
     }).catch((err) => console.log(err));
-    
-    const { books } = GetBooksHooks();
 
     const validationSchema = Yup.object().shape({
-        id: Yup.number().positive().required().integer(),
-        title: Yup.string("Este campo deve ser preenchido com texto").required("Você deve inserir um titulo"),
-        description: Yup.string("Este campo deve ser preenchido com texto").required("Você deve inserir uma descrição"),
-        pageCount: Yup.number("Este campo deve ser preenchido com números inteiros").positive("Número deve ser positivo").required("Você deve inserir a quantidade de páginas").integer(),
-        excerpt: Yup.string("Este campo deve ser preenchido com texto").required("Você deve inserir um excerto"),
-        publishDate: Yup.date().default(() => new Date()),
+        title: Yup.string("Este campo deve ser preenchido com texto"),
+        description: Yup.string("Este campo deve ser preenchido com texto"),
+        pageCount: Yup.number("Este campo deve ser preenchido com números inteiros").positive("Número deve ser positivo").integer(),
+        excerpt: Yup.string("Este campo deve ser preenchido com texto")
     });
 
     const initialValues = {
-        id: 0,
-        title: "",
-        description: "",
-        pageCount: 0,
-        excerpt: "",
-        publishDate: new Date()
+        title: book.title,
+        description: book.description,
+        pageCount: book.pageCount,
+        excerpt: book.excerpt
     }
-
-    const lastId = books.length + 1
-    initialValues.id = lastId
 
     return (
         <div>
@@ -72,4 +61,4 @@ function CreateBook() {
     );
 }
 
-export default CreateBook;
+export default UpdateBook;
