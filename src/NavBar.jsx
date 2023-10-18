@@ -6,7 +6,7 @@ import "./css/NavLinkStyle.css"
 function NavBar() {
     return (
         <List component="nav">
-            <ListItem components="div">
+            <ListItem component="div">
                 <ListItemText inset>
                     <Typography color="inherit" variant="h6"><NavLink to={"/"} className="nav-link"><i className="fa-solid fa-house"></i> Home</NavLink></Typography>
                 </ListItemText>
