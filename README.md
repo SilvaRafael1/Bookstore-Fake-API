@@ -14,3 +14,7 @@ Critérios de avaliação:
 - Desenvolva a interface gráfica apropriada (com ou sem uso de bibliotecas)
 - Implemente o gerenciando rotas com React Router
 - Consuma a API RESTful deste projeto com Axios
+
+## Como usar
+
+Primeiro você deve fazer um clone para sua máquina local, após isso abra o `cmd` dentro da pasta onde foi clonado e digite os comandos `npm i`, para instalar todas as dependências e `npm start` para iniciar um servidor local, ao realizar os dois comandos, irá aparecer no console o link para acessar via navegador.
