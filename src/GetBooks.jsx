@@ -17,9 +17,11 @@ function GetBooks() {
             const tituloUpperCase = livro.title.toUpperCase()
             if (tituloUpperCase === pesqUpperCase || pesquisa === "") {
                 return (
-                    <NavLink to={"/books/" + livro.id} className="nav-link"><div className="grid-item" key={livro.id}>
-                        {livro.title}
-                    </div></NavLink>
+                    <NavLink to={"/books/" + livro.id} className="nav-link" key={livro.id}>
+                        <div className="grid-item" key={livro.id}>
+                            {livro.title}
+                        </div>
+                    </NavLink>
                 )
             }
         })
@@ -28,9 +30,9 @@ function GetBooks() {
 
     const GridLivros = (pesquisa) => {
         return (
-                <div className="grid-container">
-                    {Livros(pesquisa)}
-                </div>
+            <div className="grid-container">
+                {Livros(pesquisa)}
+            </div>
         )
     }
 
