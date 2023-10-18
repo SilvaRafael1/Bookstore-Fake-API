@@ -52,14 +52,14 @@ function CreateBook() {
                             <ErrorMessage name="description" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="pageCount">Número de Páginas</label>
-                            <Field name="pageCount" id="pageCount" type="number" className={'form-control' + (errors.pageCount && touched.pageCount ? 'is-invalid' : '')} />
-                            <ErrorMessage name="pageCount" component="div" className="invalid-feedback" />
-                        </div>
-                        <div className="form-group">
                             <label htmlFor="excerpt">Excerto</label>
                             <Field name="excerpt" id="excerpt" type="text" className={'form-control' + (errors.excerpt && touched.excerpt ? 'is-invalid' : '')} />
                             <ErrorMessage name="excerpt" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="pageCount">Número de Páginas</label>
+                            <Field name="pageCount" id="pageCount" type="number" className={'form-control' + (errors.pageCount && touched.pageCount ? 'is-invalid' : '')} />
+                            <ErrorMessage name="pageCount" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-group">
                             <button type="submit">Enviar</button>

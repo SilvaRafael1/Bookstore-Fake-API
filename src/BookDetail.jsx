@@ -14,7 +14,7 @@ function BookDetail() {
             <div className="book">
                 <p className="titulo">Título: {book.title} <br /></p>
                 <p className="descricao">Descrição: {book.description} <br /></p>
-                <p className="resumo">Resumo: {book.excerpt} <br /> </p>
+                <p className="resumo">Excerto: {book.excerpt} <br /> </p>
                 <p className="num">Número de Páginas: {book.pageCount}</p>
             </div>
             <div className="btns">

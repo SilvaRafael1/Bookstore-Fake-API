@@ -8,10 +8,10 @@ function NavBar() {
         <List component="nav">
             <ListItem components="div">
                 <ListItemText inset>
-                    <Typography color="inherit" variant="h6"><NavLink to={"/books/"} className="nav-link">Home</NavLink></Typography>
+                    <Typography color="inherit" variant="h6"><NavLink to={"/"} className="nav-link"><i className="fa-solid fa-house"></i> Home</NavLink></Typography>
                 </ListItemText>
                 <ListItemText inset>
-                    <Typography color="inherit" variant="h6"><NavLink to={"/createBook/"} className="nav-link">Criar Livro</NavLink></Typography>
+                    <Typography color="inherit" variant="h6"><NavLink to={"/createBook/"} className="nav-link"><i className="fa-solid fa-plus"></i> Criar Livro</NavLink></Typography>
                 </ListItemText>
             </ListItem>
         </List>

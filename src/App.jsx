@@ -13,14 +13,14 @@ function App() {
             <div>
                 <AppBar color="primary" position="static">
                     <Toolbar>
-                        <Typography variant="h4" color="inherit">Livraria IFRS-BG</Typography>
+                        <Typography variant="h4" color="inherit"><i className="fa-solid fa-book"></i> Livraria IFRS-BG</Typography>
                         <NavBar />
                     </Toolbar>
                 </AppBar>
 
                 <div className="routes">
                     <Routes>
-                        <Route path="/books" Component={GetBooks} />
+                        <Route exact path="/" Component={GetBooks} />
                         <Route path="/books/:id" Component={BookDetail} />
                         <Route path="/updateBook/:id" Component={UpdateBook} />
                         <Route path="/createBook" Component={CreateBook} />
